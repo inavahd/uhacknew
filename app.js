@@ -153,9 +153,9 @@ app.get("/Seller" , function(req,res){
 })
 
 
-//app.get('/upload2',(req,res)=>{
-//    res.render('upload2.ejs')
-//})
+app.get('/upload2',(req,res)=>{
+    res.render('upload2.ejs')
+})
 
 //app.post('/invoiceDetails',(req,res)=>{
 //    res.redirect('/upload2')
@@ -199,8 +199,9 @@ app.post("/invoiceDetails", function(req,res){
             console.log(discount)
         }
     })
-    sendMail();
-    res.redirect("/displayS");
+//    sendMail();
+//    res.redirect("/displayS");
+     res.redirect('/upload2')
 })
 
 app.get("/displayL",function(req,res){

@@ -16,7 +16,6 @@
 
 <body>
     <% include partials/navbar %>
-    </form>
     <div id='upload-div'>
       <form
         id="uploadForm"
@@ -24,7 +23,7 @@
         action="/api/upload"
         method="post"
       >
-        <input type="file" name="userFile"/>
+        <input type="file" name="userFile" >
         <button>Upload</button>
       </form>
     </div>
