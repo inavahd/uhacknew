@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    #login-div{
+        width:400px;
+        height:500px;
+        position: fixed;
+        top:30%;
+        left:35%
+    }
+</style>
+
+<body>
+    <% include partials/navbar %>
+
+    <div id='login-div'>
+<!--        <h1 class='display-4'>Enter Details Here!</h1>-->
+        <br>
+        <!-- <form>
+            <input type='text' placeholder='Username' name='username' onfocus="this.value=''">
+            <br>
+            <br>
+            <input type='password' name='password' placeholder="Password">
+            <br>
+            <br>
+            <button id='submit-btn'>Login</button>
+        </form> -->
+
+        <form method="POST" action="/invoiceDetails">
+  <div class="form-group">
+    <label>Amount(in Rs)</label>
+    <input type="text" class="form-control"  placeholder="Amount" name="amount">
+  </div>
+  <div class="form-group">
+    <label>Payment Due Date</label>
+    <input type="text" class="form-control" placeholder="Due Date" name="date">
+  </div>
+  <div class="form-group">
+    <label>Buyer Name</label>
+    <input type="text" class="form-control"  placeholder="Buyer Name" name="buyername">
+  </div>
+  <button id='submit-btn'>Submit</button>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <% include partials/navbar %>
+
+<table class='local'>
+
+        <thead>
+                <tr>
+                    <th style="width:100px">Seller Name</th>
+                    <th style="width:150px">Buyer Name</th>
+                    <th style="width:100px">Amount</th>
+                    <th style="width:100px">Due Date</th> 
+                    <th style="width:200px"></th>             
+                </tr>
+            </thead>
+
+    
+
+    <% discounts.forEach(function(item){ %>
+        <tr>
+            <td style="width:100px"><%= item.seller.name %></td>
+            <td style="width:100px"><%= item.buyer.name %></td>
+            <td style="width:100px"><%= item.amount %></td>
+            <td style="width:100px"><%= item.dueDate %></td>
+            <td style="width:200px">
+                    <form method="POST" action="/newproposal/<%= item._id %>">
+                        <button class='btn-secondary'>Proceed to make a proposal</button>
+                    </form>
+                </td>
+        </tr>
+    <% }) %>
+
+</table>
+  <% include partials/footer %>

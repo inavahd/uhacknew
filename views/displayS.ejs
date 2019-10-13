@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <% include partials/navbar %>
+
+<table class='local'>
+
+        <thead>
+                <tr>
+                    <th style="width:100px">Lender Name</th>
+                    <th style="width:150px">Rate of Interest</th>
+                    <th style="width:100px">Amount</th>
+                    <th style="width:100px">Due Date</th> 
+                    <th style="width:200px"></th>             
+                </tr>
+            </thead>
+
+    
+
+    <% proposals.forEach(function(item){ %>
+        <tr>
+            <td style="width:100px"><%= item.lender.name %></td>
+            <td style="width:100px"><%= item.interestRate %></td>
+            <td style="width:100px"><%= item.discount.amount %></td>
+            <td style="width:100px"><%= item.discount.dueDate %></td>
+            <td style="width:200px">
+                    <form method="POST" action="/proposalaccept/<%= item._id %>">
+                        <button class='btn-secondary'>Proceed to accept proposal</button>
+                    </form>
+                </td>
+        </tr>
+    <% }) %>
+
+</table>
+
+  <% include partials/footer %>
